@@ -1,6 +1,7 @@
 asdfasdfasdfasdfasddfasdfsdfkfjowierjkljdfsdfsdf
 # Simple PHP Git deploy script
 _Automatically deploy the code using PHP and Git._
+*This project was clone from `Simple PHP Git deploy`, Now support OOP, Namespace and new featureds.*
 
 ## Requirements
 
