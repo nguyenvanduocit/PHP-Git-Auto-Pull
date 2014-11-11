@@ -32,7 +32,7 @@ $default = array(
         "multi_config" =>"/multi_config",
     ),
     "authorMap" =>array(
-        "nguyenvanduocit"=>"", //relate to branch dir
+        "nguyenvanduocit"=>"/", //relate to branch dir
     ),
     "exclude" => array(".git",".idea"),
     "targetDir" => PARENT_DIR."/data",
