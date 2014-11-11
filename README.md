@@ -1,15 +1,14 @@
 asdfasdfasdfasdfasddfasdfsdfkfjowierjkljdfsdfsdf
 # Simple PHP Git deploy script
 _Automatically deploy the code using PHP and Git._
-*This project was clone from `Simple PHP Git deploy`, Now support OOP, Namespace and new featureds.*
+*This project was clone from `Simple PHP Git deploy`, Now in OOP, Namespace and new featureds.*
 
 ## Requirements
 
 * `git` and `rsync` are required on the server that's running the script
   (_server machine_).
-  - Optionally, `tar` is required for backup functionality (`BACKUP_DIR` option).
-  - Optionally, `composer` is required for composer functionality (`USE_COMPOSER`
-  option).
+  - Optionally, `tar` is required for backup functionality.
+  - Optionally, `composer` is required for composer functionality.
 * The system user running PHP (e.g. `www-data`) needs to have the necessary
   access permissions for the `TMP_DIR` and `TARGET_DIR` locations on
   the _server machine_.
