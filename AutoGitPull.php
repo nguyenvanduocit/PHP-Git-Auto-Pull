@@ -226,7 +226,7 @@ class AutoGitPull
         }
         //check if need backup
         if ( ($this->backupDir !== '') && (is_dir($repositoryDir))) {
-            $this->doBackup($this->backupDir, $repositoryDir);
+            $this->doBackup($this->backupDir, $targetDir);
         }
 
         //check if git init on target dir
