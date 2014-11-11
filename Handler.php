@@ -17,7 +17,7 @@ if ( $_GET["config"] !=='' )
     $config_file = dirname(__FILE__)."/config_".$_GET["config"] . ".php";
     if(file_exists($config_file))
     {
-        require_once $config_file;
+        $config = require_once($config_file);
     }
 }
 
@@ -39,9 +39,5 @@ $default = array(
     "isTryMkDir" => true,
     "notifyEmail" => "nguyenvanduasasdfasdfdfocit@gmail.com"
 );
-if( !isset($config) || !is_array($config))
-{
-    $config = array();
-}
 $args = array_merge($default, $config);
 $autoGitPull = new AutoGitPull($args);
