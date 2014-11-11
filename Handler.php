@@ -25,6 +25,9 @@ if ( isset($_GET["config"]) )
 if(!defined('PARENT_DIR')){
     define("PARENT_DIR", dirname(__FILE__));
 }
+if(!defined('DEBUG')){
+    define("DEBUG", true);
+}
 $default = array(
     "secretKey" => '',
     "repository"=>'',

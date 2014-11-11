@@ -45,7 +45,9 @@ class Logger {
                     </style>' .
             $result.
             '</html>';
-        file_put_contents(PARENT_DIR."/log.html",$result);
+        if(DEBUG) {
+            file_put_contents(dirname(__FILE__) . "/../log.html", $result);
+        }
         ob_end_flush();
     }
 }

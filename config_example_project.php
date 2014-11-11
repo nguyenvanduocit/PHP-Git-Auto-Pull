@@ -6,15 +6,15 @@ $config = array(
     "secretKey" => '123456',
     "repository"=>'',
     "branchMap" => array(
-        "multi_config" =>"/multi_config",
+        "multi_config" =>"",
     ),
     "authorMap" =>array(
-        "nguyenvanduocit"=>"/", //relate to branch dir
+        "nguyenvanduocit"=>"", //relate to branch dir
     ),
     "exclude" => array(".git",".idea"),
     "targetDir" => PARENT_DIR."/data",
     "tmpDir" => PARENT_DIR."/tmp",
-    "isNeedClearUp" => true,
+    "isNeedClearUp" => false,
     "backupDir" => PARENT_DIR.'/backup',
     "isUseComposer" => false,
     "isTryMkDir" => true,

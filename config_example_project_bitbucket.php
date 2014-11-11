@@ -2,6 +2,7 @@
 if(!defined('PARENT_DIR')){
     define("PARENT_DIR", dirname(__FILE__));
 }
+
 $config = array(
     "secretKey" => '123456',
     "repository"=>'',
