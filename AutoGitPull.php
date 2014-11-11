@@ -283,15 +283,17 @@ class AutoGitPull
 
     private function doBackup($backupDir, $targetDir)
     {
-        $this->commander->enqueue(sprintf(
-            "tar -cvzf --exclude='%s*' -czf %s/%s-%s-%s.tar.gz %s*"
-            , $backupDir
-            , $backupDir
-            , basename($targetDir)
-            , md5($targetDir)
-            , date('YmdHis')
-            , $targetDir // We're backing up this directory into BACKUP_DIR
-        ));
+        if (count(glob($targetDir."/*")) !== 0 ) {
+            $this->commander->enqueue(sprintf(
+                "tar --exclude='%s*' -czf %s/%s-%s-%s.tar.gz %s*"
+                , $backupDir
+                , $backupDir
+                , basename($targetDir)
+                , md5($targetDir)
+                , date('YmdHis')
+                , $targetDir // We're backing up this directory into BACKUP_DIR
+            ));
+        }
     }
     private function doComposer($targetDir){
         $this->commander->enqueue(sprintf(

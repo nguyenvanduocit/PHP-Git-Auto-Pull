@@ -51,7 +51,6 @@ class Commander {
                         , htmlentities(trim(implode("\n", $tmp)))
                     );
                     if ($return_code !== 0) {
-
                         break;
                     }
                 }
