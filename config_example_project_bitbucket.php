@@ -20,5 +20,5 @@ $config = array(
     "isTryMkDir" => true,
     "notifyEmail" => "nguyenvanduasasdfasdfdfocit@gmail.com",
     "username" => "nguyenvanduocit",
-    "password"=>"fathertime"
+    "password"=>"asdfasdfasdf"
 );
