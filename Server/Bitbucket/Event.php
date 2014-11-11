@@ -9,6 +9,7 @@
 namespace AutoGitPuller\Server\Bitbuck;
 
 use AutoGitPuller\Server\BaseEvent;
+use AutoGitPuller\Util\Error;
 
 class Event extends BaseEvent{
     //https://developer.github.com/v3/activity/events/types/#pushevent
