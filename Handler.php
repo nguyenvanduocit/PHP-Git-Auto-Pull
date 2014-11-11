@@ -21,7 +21,6 @@ if ( isset($_GET["config"]) )
     {
         $config = array();
     }
-    echo $config_file;
 }
 if(!defined('PARENT_DIR')){
     define("PARENT_DIR", dirname(__FILE__));
