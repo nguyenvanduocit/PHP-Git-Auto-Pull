@@ -10,7 +10,7 @@ require_once "AutoGitPull.php";
 use AutoGitPuller\AutoGitPull;
 
 //load config
-if ( $_GET["config"] !=='' )
+if ( isset($_GET["config"]) )
 {
     $config_file = dirname(__FILE__)."/config_".$_GET["config"] . ".php";
     if(file_exists($config_file))
