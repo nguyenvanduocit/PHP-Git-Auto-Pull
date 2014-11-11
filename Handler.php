@@ -20,10 +20,10 @@ $default = array(
     "authorMap" =>array(
         "nguyenvanduocit"=>"/",
     ),
-    "exclude" => array(),
+    "exclude" => array(".git",".idea"),
     "targetDir" => PARENT_DIR."/data",
     "tmpDir" => PARENT_DIR."/tmp",
-    "isNeedClearUp" => true,
+    "isNeedClearUp" => false,
     "backupDir" => '',
     "isUseComposer" => false,
     "isTryMkDir" => true,
