@@ -12,7 +12,7 @@ $config = array(
         "nguyenvanduocit"=>"/", //relate to branch dir
     ),
     "exclude" => array(".git",".idea"),
-    "targetDir" => PARENT_DIR."/data",
+    "targetDir" => PARENT_DIR."/buibucket",
     "tmpDir" => PARENT_DIR."/tmp",
     "isNeedClearUp" => true,
     "backupDir" => PARENT_DIR.'/backup',
