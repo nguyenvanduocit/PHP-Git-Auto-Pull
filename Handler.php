@@ -21,8 +21,6 @@ if ( $_GET["config"] !=='' )
     }
 }
 
-global $config;
-
 $default = array(
     "secretKey" => '',
     "repository"=>'',
