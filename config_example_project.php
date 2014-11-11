@@ -3,7 +3,7 @@ if(!defined('PARENT_DIR')){
     define("PARENT_DIR", dirname(__FILE__));
 }
 $config = array(
-    "secretKey" => '123456_7',
+    "secretKey" => '123456',
     "repository"=>'',
     "branchMap" => array(
         "multi_config" =>"/multi_config",
