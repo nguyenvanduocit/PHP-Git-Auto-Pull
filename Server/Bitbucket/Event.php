@@ -19,7 +19,6 @@ class Event extends BaseEvent{
 
     public function processRequest(){
         $headers = getallheaders();
-        $hubSignature = $headers['X-Hub-Signature'];
         $payload = file_get_contents('php://input');
         $data = json_decode($payload);
         if($this->secretkey!=='') {
