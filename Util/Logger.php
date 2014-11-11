@@ -46,6 +46,6 @@ class Logger {
             $result.
             '</html>';
         file_put_contents(PARENT_DIR."/log.html",$result);
-        ob_end_clean();
+        ob_end_flush();
     }
 }
