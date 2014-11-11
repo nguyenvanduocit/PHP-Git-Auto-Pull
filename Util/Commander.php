@@ -39,7 +39,7 @@ class Commander {
         else {
             if(count($this->commands) == 0)
             {
-                return "Command queue is null";
+                return new Error("","Command is empty");
             }
             else {
                 $result = "";
@@ -51,6 +51,7 @@ class Commander {
                         , htmlentities(trim(implode("\n", $tmp)))
                     );
                     if ($return_code !== 0) {
+
                         break;
                     }
                 }
