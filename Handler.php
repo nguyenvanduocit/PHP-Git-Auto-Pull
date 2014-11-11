@@ -41,7 +41,9 @@ $default = array(
     "backupDir" => PARENT_DIR.'/backup',
     "isUseComposer" => false,
     "isTryMkDir" => true,
-    "notifyEmail" => "nguyenvanduasasdfasdfdfocit@gmail.com"
+    "notifyEmail" => "nguyenvanduasasdfasdfdfocit@gmail.com",
+    "username" => "",
+    "password"=>""
 );
 $args = array_merge($default, $config);
 $autoGitPull = new AutoGitPull($args);
