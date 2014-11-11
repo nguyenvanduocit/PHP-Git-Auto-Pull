@@ -187,7 +187,8 @@ class AutoGitPull
     public function handleRequest()
     {
         $headerString = "";
-        $headers = getallheaders();
+        //$headers = getallheaders();
+        $headers['X-GitHub-Delivery'] = "sdaf";
         if( isset($headers['X-GitHub-Delivery'])) {
             $this->event = new \AutoGitPuller\Server\Github\Event($this->secretKey, $this->username, $this->password);
         }
