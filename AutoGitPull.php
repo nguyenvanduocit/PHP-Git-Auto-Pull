@@ -199,8 +199,8 @@ class AutoGitPull
             return $isValidatedRequest;
         }
         //check if commiter id is map with dir
-        if ($this->authorMap[$this->event->getCommiterUsername()] !== '') {
-            if ($this->branchMap[$this->event->getRepositoryBranch()] !== '') {
+        if ( array_key_exists($this->event->getCommiterUsername(), $this->authorMap) ) {
+            if ( array_key_exists($this->event->getRepositoryBranch(), $this->branchMap) ) {
                 return $this->event;
             } else {
                 return new Error("", "Branch is not allowed");
