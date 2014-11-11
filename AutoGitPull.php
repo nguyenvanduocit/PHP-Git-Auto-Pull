@@ -206,7 +206,7 @@ class AutoGitPull
             if ( array_key_exists($this->event->getRepositoryBranch(), $this->branchMap) ) {
                 return true;
             } else {
-                var_dump($this->event->getRepositoryBranch());
+                var_dump($this->branchMap);
                 return new Error("", "Branch is not allowed");
             }
         } else {
