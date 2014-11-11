@@ -1,5 +1,5 @@
 <?php
-$config_file = array(
+$config = array(
     "secretKey" => '',
     "repository"=>'',
     "branchMap" => array(
