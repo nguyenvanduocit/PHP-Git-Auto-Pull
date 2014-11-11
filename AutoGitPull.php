@@ -187,8 +187,13 @@ class AutoGitPull
     public function handleRequest()
     {
         $headerString = "";
-
-        $this->event = new \AutoGitPuller\Server\Github\Event($this->secretKey);
+        $headers = getallheaders();
+        if($headers['User-Agent'] !== '') {
+            $this->event = new \AutoGitPuller\Server\Github\Event($this->secretKey, $this->username, $this->password);
+        }
+        else{
+            $this->event = new \AutoGitPuller\Server\Bitbuck\Event($this->secretKey, $this->username, $this->password);
+        }
         $isValidatedRequest = $this->event->processRequest();
 
         if ($isValidatedRequest instanceof \AutoGitPuller\Util\Error) {
@@ -202,7 +207,7 @@ class AutoGitPull
                 return new Error("", "Branch is not allowed");
             }
         } else {
-            return new Error("", "This commiter is now allowed");
+            return new Error("", "This commiter is not allowed");
         }
     }
 
