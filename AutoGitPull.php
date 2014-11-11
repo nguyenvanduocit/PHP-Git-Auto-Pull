@@ -261,7 +261,7 @@ class AutoGitPull
     private function doFetch($branchName, $targetDir)
     {
         $this->commander->enqueue(sprintf(
-            'git --git-dir="%1$s.git" --work-tree="%2%s" fetch origin %3$s'
+            'git --git-dir="%1$s.git" --work-tree="%2$s" fetch origin %3$s'
             , $targetDir
             , $targetDir
             , $branchName
