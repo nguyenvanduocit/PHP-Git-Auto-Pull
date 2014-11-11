@@ -11,6 +11,16 @@ require_once "AutoGitPull.php";
 
 use AutoGitPuller\AutoGitPull;
 
+//load config
+if ( $_GET["config"] !=='' )
+{
+    $config_file = dirname(__FILE__)."/".$_GET["config"] . ".php";
+    if(file_exists($config_file))
+    {
+        require_once $config_file;
+    }
+}
+global $config;
 $default = array(
     "secretKey" => '',
     "repository"=>'',
@@ -22,8 +32,7 @@ $default = array(
     ),
     "exclude" => array(".git",".idea"),
     "targetDir" => PARENT_DIR."/data",
-    //"tmpDir" => PARENT_DIR."/tmp",
-    "tmpDir" => '',
+    "tmpDir" => PARENT_DIR."/tmp",
     "isNeedClearUp" => false,
     "backupDir" => PARENT_DIR.'/backup',
     "isUseComposer" => false,
@@ -31,6 +40,5 @@ $default = array(
     "notifyEmail" => "nguyenvanduasasdfasdfdfocit@gmail.com"
 );
 
-$args = array();
-$args = array_merge($default, $args);
+$args = array_merge($default, $config);
 $autoGitPull = new AutoGitPull($args);

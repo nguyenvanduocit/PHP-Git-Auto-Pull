@@ -242,9 +242,9 @@ class AutoGitPull
         if($isUsersync)
         {
             $this->doRSYNC($targetDir, $this->targetDir . $repositoryDir);
-        }
-        if($this->isNeedClearUp){
-            $this->doCleanUp($tmpDir);
+            if($this->isNeedClearUp){
+                $this->doCleanUp($tmpDir);
+            }
         }
         $this->commander->execute();
     }
@@ -283,7 +283,7 @@ class AutoGitPull
 
     private function doBackup($backupDir, $targetDir)
     {
-        if (count(glob($targetDir."/*")) !== 0 ) {
+        if (count(glob($targetDir."/*")) !== 0 ) { //Check if target dir is not empty
             $this->commander->enqueue(sprintf(
                 "tar --exclude='%s*' -czf %s/%s-%s-%s.tar.gz %s*"
                 , $backupDir
