@@ -225,7 +225,7 @@ class AutoGitPull
             $targetDir = $this->targetDir . $repositoryDir;
         }
         //check if need backup
-        if ( ($this->backupDir !== '') && (is_dir($repositoryDir))) {
+        if ( ($this->backupDir !== '') && (is_dir($targetDir))) {
             $this->doBackup($this->backupDir, $targetDir);
         }
 
