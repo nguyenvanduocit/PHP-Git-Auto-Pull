@@ -17,3 +17,4 @@ $config = array(
     "isTryMkDir" => true,
     "notifyEmail" => "nguyenvanduasasdfasdfdfocit@gmail.com"
 );
+echo "Fuck";
