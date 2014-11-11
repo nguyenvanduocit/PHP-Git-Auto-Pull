@@ -19,7 +19,7 @@ class Event extends BaseEvent{
     }
 
     public function processRequest(){
-        $payload = file_get_contents('php://input');
+        $payload = isset($_POST['payload']) ? $_POST['payload'] : false;
         $data = json_decode($payload);
         if($this->secretkey!=='') {
             if( ($_GET["secretkey"] == '') || ( $_GET["secretkey"] != $this->secretkey) )
@@ -28,7 +28,7 @@ class Event extends BaseEvent{
             }
         }
         $this->repository = $data->repository;
-        var_dump($payload);
+        var_dump($this->repository);
         $this->repository->branchName = $data->commits[0]->branch;
         $this->author = $data->user;
         return true;
