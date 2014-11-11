@@ -30,7 +30,6 @@ class Event extends BaseEvent{
         $this->repository = $data->repository;
         $this->repository->branchName = $data->commits[0]->branch;
         $this->author = $data->user;
-        var_dump($this->repository->branchName);
         return true;
     }
     public function getCommiterUsername()
