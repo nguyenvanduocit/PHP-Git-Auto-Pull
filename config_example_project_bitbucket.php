@@ -6,7 +6,7 @@ $config = array(
     "secretKey" => '123456',
     "repository"=>'',
     "branchMap" => array(
-        "multi_config" =>"/multi_config",
+        "master" =>"/",
     ),
     "authorMap" =>array(
         "nguyenvanduocit"=>"/", //relate to branch dir

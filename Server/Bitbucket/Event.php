@@ -28,7 +28,6 @@ class Event extends BaseEvent{
             }
         }
         $this->repository = $data->repository;
-        var_dump($this->repository);
         $this->repository->branchName = $data->commits[0]->branch;
         $this->author = $data->user;
         return true;
