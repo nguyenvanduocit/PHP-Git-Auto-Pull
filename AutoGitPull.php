@@ -188,13 +188,12 @@ class AutoGitPull
     {
         $headerString = "";
         $headers = getallheaders();
-        if($headers['X-GitHub-Delivery'] !== '') {
+        if( isset($headers['X-GitHub-Delivery'])) {
             $this->event = new \AutoGitPuller\Server\Github\Event($this->secretKey, $this->username, $this->password);
         }
         else{
             $this->event = new \AutoGitPuller\Server\Bitbuck\Event($this->secretKey, $this->username, $this->password);
         }
-        var_dump($headers);exit;
         $isValidatedRequest = $this->event->processRequest();
 
         if ($isValidatedRequest instanceof \AutoGitPuller\Util\Error) {
