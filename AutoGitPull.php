@@ -47,21 +47,24 @@ class AutoGitPull
         //init properties
         $this->init($args);
 
-        $this->event = $this->handleRequest();
+        $handlerResult = $this->handleRequest();
 
-        if ($this->event instanceof \AutoGitPuller\Util\Error) {
-            die($this->event->getMessage());
+        if ($handlerResult instanceof \AutoGitPuller\Util\Error) {
+            echo $handlerResult->getMessage();
         }
+        else {
+            $this->commander = \AutoGitPuller\Util\Commander::getInstance();
 
-        $this->commander = \AutoGitPuller\Util\Commander::getInstance();
+            $checkResult = $this->checkEnvironment();
 
-        $checkResult = $this->checkEnvironment();
-
-        if ($checkResult instanceof \AutoGitPuller\Util\Error) {
-            die($checkResult->getMessage());
+            if ($checkResult instanceof \AutoGitPuller\Util\Error) {
+                echo $checkResult->getMessage();
+            }
+            else
+            {
+                $pullResult = $this->doPull();
+            }
         }
-
-        $pullResult = $this->doPull();
         Logger::logEnd();
     }
 
@@ -201,7 +204,7 @@ class AutoGitPull
         //check if commiter id is map with dir
         if ( array_key_exists($this->event->getCommiterUsername(), $this->authorMap) ) {
             if ( array_key_exists($this->event->getRepositoryBranch(), $this->branchMap) ) {
-                return $this->event;
+                return true;
             } else {
                 return new Error("", "Branch is not allowed");
             }
