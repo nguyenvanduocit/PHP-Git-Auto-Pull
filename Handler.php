@@ -1,6 +1,4 @@
 <?php
-define("PARENT_DIR", dirname(__FILE__));
-
 require_once "Util/Commander.php";
 require_once "Util/Error.php";
 require_once "Util/Logger.php";
@@ -17,10 +15,16 @@ if ( $_GET["config"] !=='' )
     $config_file = dirname(__FILE__)."/config_".$_GET["config"] . ".php";
     if(file_exists($config_file))
     {
-        $config = require_once($config_file);
+        include_once($config_file);
+    }
+    else
+    {
+        $config = array();
     }
 }
-
+if(!defined('PARENT_DIR')){
+    define("PARENT_DIR", dirname(__FILE__));
+}
 $default = array(
     "secretKey" => '',
     "repository"=>'',
