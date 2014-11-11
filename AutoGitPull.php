@@ -189,6 +189,7 @@ class AutoGitPull
         $headerString = "";
         $headers = getallheaders();
         if($headers['X-GitHub-Delivery'] !== '') {
+            exit;
             $this->event = new \AutoGitPuller\Server\Github\Event($this->secretKey, $this->username, $this->password);
         }
         else{
