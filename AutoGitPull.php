@@ -251,6 +251,11 @@ class AutoGitPull
 
     private function doClone($gitURL, $targetDir, $branchName)
     {
+        //clean directory
+        $this->commander->enqueue(sprintf(
+            'rm -rf %1$s/*'
+            , $targetDir
+        ));
         $this->commander->enqueue(sprintf(
             'git clone --depth=1 --branch %1$s %2$s %3$s'
             , $branchName
