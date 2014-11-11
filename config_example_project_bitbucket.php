@@ -2,7 +2,6 @@
 if(!defined('PARENT_DIR')){
     define("PARENT_DIR", dirname(__FILE__));
 }
-echo "Fuck";
 $config = array(
     "secretKey" => '123456',
     "repository"=>'',
